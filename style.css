@@ -2,18 +2,15 @@
 
 div{
     float: left;
-    width: 30%;
-    height: 100%;
+    width: 100%;
+    background-color: red;
+    margin: 10px;
 }
 
-#left {
-    background-color:red;
+.red {
+    background-color: darkred;
 }
 
-#right {
-    background-color:blue;
-}
-
-span {
-    background-color: green;
+.blue {
+    background-color: navy;
 }
