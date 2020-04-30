@@ -2,15 +2,24 @@
 <html>
 
     <head>
+        <meta charset="UTF-8">
         <title>Page Title</title>
+        <link rel="stylesheet" href="style.css">
     </head>
-<!--   hi this is a comment -->
-    <body style="background-color:tomato;">
 
-        <h1 style ="font-size:2px;">This is a Heading</h1>
-        <p style ="text-align:center">This is a paragraph.</p>
-        <p style ="text-align:center">testing merge conflict</p>
+    <body>
 
+        <div id="left">
+            <p>This is the left</p>
+        </div>
+
+        <div id="right">
+            <p>This is <span>the</span> right</p>
+        </div>
+
+        <script>
+            document.getElementById("right").innerHTML = "<p>Hello JavaScript</p>";
+        </script>
 
     </body>
 

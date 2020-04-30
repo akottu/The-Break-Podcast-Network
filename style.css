@@ -1,0 +1,19 @@
+
+
+div{
+    float: left;
+    width: 30%;
+    height: 100%;
+}
+
+#left {
+    background-color:red;
+}
+
+#right {
+    background-color:blue;
+}
+
+span {
+    background-color: green;
+}
