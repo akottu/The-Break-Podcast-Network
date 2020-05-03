@@ -8,5 +8,15 @@ body {
 }
 
 footer {
-    bottom: 0%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+i.fa.fa-spotify {
+     background-color: black;
+     padding: -5px;
+     border-radius: 100%;
+     font-size:36px;
+     color:#1DB954
 }
