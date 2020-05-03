@@ -2,3 +2,11 @@ img.title {
     width: 219px;
     height: 221.25px;
 }
+
+body {
+    background-color: #ffffc7;
+}
+
+footer {
+    bottom: 0%;
+}
