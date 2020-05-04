@@ -16,8 +16,6 @@ footer {
 i.fa.fa-spotify {
     /* RESOLVE the black background protrudes from the logo */
      background-color: black;
-     padding: 0px;
-     border: 0px;
      border-radius: 200%;
      font-size:48px;
      color:#1DB954;
@@ -26,4 +24,19 @@ i.fa.fa-spotify {
 img.apple-podcasts {
     height: 36px;
     width: 180px;
+}
+
+i.fa.fa-facebook-square {
+     font-size:48px;
+     color:#3b5998;
+     background-color: #fefefe;
+}
+
+i.fa.fa-instagram {
+    font-size: 48px;
+}
+
+i.fa.fa-twitter{
+    font-size: 48px;
+    color: #1DA1F2;
 }
