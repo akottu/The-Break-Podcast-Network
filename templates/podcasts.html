@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	<div class="album py-5 bg-light">
+		<div class="container">
+			<div class="row">
+		    
+	{% for post in posts %}
+
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+              <img src="{{url_for('static', filename='images/' + post.Logo)}}"align= "middle" width="320" height="210" style="margin:8px 10px" />
+               
+            </svg>
+            <div class="card-body">
+              <p class="card-text">
+              	<h3> {{post.Podcast}} </h3>
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Explore</button>
+                </div>
+                <small class="text-muted">Last Episode {{post.Date}}</small>
+             </div>
+             </div>
+           </div>
+         </div>
+
+	{% endfor %}
+	</div>
+	</div>
+	</div>
+
+
+
+{% endblock content %}
