@@ -24,6 +24,9 @@ posts = [
 ]
 
 @app.route('/') ## homepage - normally return html in function
+def index():
+	return render_template('index.html')
+
 @app.route('/podcasts')
 def podcasts():
     return render_template('podcasts.html', posts=posts) ## passing in argument posts
