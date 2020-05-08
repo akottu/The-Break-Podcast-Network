@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="album.css" rel="stylesheet">
-    <link href="main.css" rel="stylesheet" type ="text/css" href="{{url_for('static', filename='main.css')}}">
+    <link rel="stylesheet" type ="text/css" href="../static/css/main.css">
 
 	{% if title %}
 	<title> The Break Network - {{title}} </title>
@@ -27,21 +27,13 @@
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    <ul class="navbar-nav mr-auto">
 	      <li class="nav-item active">
-	        <a class="nav-link" href='/'>Podcasts <span class="sr-only">(current)</span></a>
+	        <a class="nav-link" href='/'>Home <span class="sr-only">(current)</span></a>
 	      </li>
 	      <li class="nav-item">
 	        <a class="nav-link" href='/about'>About</a>
 	      </li>
-	      <li class="nav-item dropdown">
-	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	          Dropdown
-	        </a>
-	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="#">Action</a>
-	          <a class="dropdown-item" href="#">Another action</a>
-	          <div class="dropdown-divider"></div>
-	          <a class="dropdown-item" href="#">Something else here</a>
-	        </div>
+	     <li class="nav-item">
+	        <a class="nav-link" href='/podcasts'>Podcasts</a>
 	      </li>
 	      <li class="nav-item">
 	        <a class="nav-link disabled" href="#">Disabled</a>
@@ -53,6 +45,32 @@
 	<div class ="container">
 		{% block  content %}{% endblock %}
 	</div>
+
+	<footer class = 'text-muted'>
+		<div class = 'container'>
+			<p>
+			<h3>Listen to us on:</h3>
+		    <a href = "https://open.spotify.com/show/1o08i7v7ENvrdY1bnEm4yu" target="_blank">
+		    	<img class = "displayed" src = "../static/images/logos/spotify-brands.svg" width="80" height="80" alt = "Spotify Podcasts">
+		    </a>
+
+		    <a href = "https://podcasts.apple.com/us/podcast/the-break/id1506395395" target="_blank">
+		   	 	<img class = "displayed" src = "../static/images/logos/US_UK_Apple_Podcasts_Listen_Badge_RGB.svg" alt = "Apple Podcasts" >
+			</a>
+
+			 <a href = "https://www.facebook.com/thebreakpod" target="_blank">
+		    	<i class="fa fa-facebook-square"></i>
+		    </a>
+
+		    <a href = "https://www.instagram.com/thebreakpod/" target = "_blank">
+		    	<i class="fa fa-instagram"></i>
+		    </a>
+		    <i class="fa fa-twitter">
+	  	 	</i>
+	  	 	</p>
+	  	 	
+		</div>
+	</footer>
 
 	<!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
