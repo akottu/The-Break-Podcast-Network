@@ -1,0 +1,208 @@
+/* default settings */
+
+body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    background: whitesmoke;
+}
+
+
+/* header section */
+
+header {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    width: 100%;
+    height: 56px;
+    background: black;
+    color: white;
+    padding: 0% 2%;
+    border-radius: 0px 0px 25px 25px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+header h1 {
+    float: left;
+    height: 56px;
+    margin: 0px;
+}
+
+.solo-header-button {
+    height: 56px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    min-width: 100px;
+    background-color: black;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+}
+
+.solo-header-button:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+
+/* hover dropdowns */
+
+.dropbtn {
+    height: 56px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    min-width: 100px;
+    background-color: black;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px 25px 0px 0px;
+}
+
+.dropdown {
+    margin: 0px 5px;
+    float: right;
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    text-align: center;
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 0px 0px 25px 25px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #ddd;
+    color: black;
+}
+
+.dropdown-content-last {
+    border-radius: 0px 0px 25px 25px;
+}
+
+.body-container {
+    padding: 1%;
+}
+
+.card {
+    width: 100%;
+    background: white;
+    float: right;
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    /* 5px rounded corners */
+    padding: 10px;
+}
+
+/* On mouse-over, add a deeper shadow */
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+footer{
+    display: table;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2 {
+    font-size: 48px;
+}
+
+.profile-pic {
+    width: 40%;
+    float: left;
+    border-radius: 10px;
+    margin: 8px;
+
+}
+
+.profile-name {
+    font-size: 36px;
+}
+
+.profile-name {
+    float: left;
+}
+
+.profile-role, .profile-hometown {
+    font-size: 18px;
+}
+
+.profile-role, .profile-hometown {
+    text-align: right;
+}
+
+.profile-description, .profile-role, .profile-name, .profile-hometown {
+    padding: 4px 8px;
+}
+
+.profile-hometown {
+    margin-top: 18px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.profile-role {
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+.profile-role a {
+    color: black;
+}
+
+/* footer section */
+
+footer {
+    width: 100%;
+    text-align: center;
+    background: black;
+    color: white;
+    border-radius: 25px 25px 0px 0px;
+}
+
+/* Style all font awesome icons */
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa {
+    color: white;
+}

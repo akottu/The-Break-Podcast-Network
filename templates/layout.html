@@ -1,81 +1,67 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
 <head>
-	 <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="album.css" rel="stylesheet">
-    <link rel="stylesheet" type ="text/css" href="../static/css/main.css">
-
-	{% if title %}
-	<title> The Break Network - {{title}} </title>
-	{% else %}
-	<title> The Break Network </title>
-	{% endif %}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>The Break Podcast Network</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Amaranth|Barlow+Semi+Condensed|Coda|Orbitron|Play&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/style.css">
 </head>
+
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-	  <a class="navbar-brand" href="/">The Break Podcast Network</a>
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	    <span class="navbar-toggler-icon"></span>
-	  </button>
+    <header>
+        <h1><a href="">The Break Podcast Network</a></h1>
+        <div class="dropdown">
+            <a href="{{url_for('contact')}}"><button id="contact-header-button" class="solo-header-button">Contact</button></a>
+        </div>
+        <div class="dropdown">
+            <a href="{{url_for('about')}}"><button id="about-header-button" class="solo-header-button">About</button></a>
+        </div>
+        <div class="dropdown">
+            <a href="{{url_for('podcasts')}}"><button id="podcasts-header-button" class="dropbtn">Podcasts</button></a>
+            <div class="dropdown-content">
+                <a class="dropdown-content-last" href="{{url_for('the_break')}}">The Break</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="{{url_for('index')}}"><button id="home-header-button" class="solo-header-button">Home</button></a>
+        </div>
 
-	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-	    <ul class="navbar-nav mr-auto">
-	      <li class="nav-item active">
-	        <a class="nav-link" href='/'>Home <span class="sr-only">(current)</span></a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href='/about'>About</a>
-	      </li>
-	     <li class="nav-item">
-	        <a class="nav-link" href='/podcasts'>Podcasts</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link disabled" href="#">Disabled</a>
-	      </li>
-	    </ul>
-	    
-	  </div>
-	</nav>
-	<div class ="container">
-		{% block  content %}{% endblock %}
+    </header>
+
+	<div class="body-container">
+
+
 	</div>
 
-	<footer class = 'text-muted'>
-		<div class = 'container'>
-			<p>
-			<h3>Listen to us on:</h3>
-		    <a href = "https://open.spotify.com/show/1o08i7v7ENvrdY1bnEm4yu" target="_blank">
-		    	<img class = "displayed" src = "../static/images/logos/spotify-brands.svg" width="80" height="80" alt = "Spotify Podcasts">
-		    </a>
+    <footer>
+        <!-- <i class="fa fa-soundcloud"></i> -->
+        <a href="https://podcasts.apple.com/us/podcast/the-break/id1506395395"><i class="fa fa-apple"></i></a>
+        <a href="https://open.spotify.com/show/1o08i7v7ENvrdY1bnEm4yu"><i class="fa fa-spotify"></i></a>
+        <i class="fa fa-youtube-play"></i>
+        <!-- if possible, want to include a "break" of some sort in between the icons for listening and the icons for social media -->
+        <a href="https://www.facebook.com/thebreakpod"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.instagram.com/thebreakpod/"><i class="fa fa-facebook"></i></a>
+        <i class="fa fa-twitter"></i>
+        <br>
+        <p>&copy Copyright</p>
+    </footer>
 
-		    <a href = "https://podcasts.apple.com/us/podcast/the-break/id1506395395" target="_blank">
-		   	 	<img class = "displayed" src = "../static/images/logos/US_UK_Apple_Podcasts_Listen_Badge_RGB.svg" alt = "Apple Podcasts" >
-			</a>
-
-			 <a href = "https://www.facebook.com/thebreakpod" target="_blank">
-		    	<i class="fa fa-facebook-square"></i>
-		    </a>
-
-		    <a href = "https://www.instagram.com/thebreakpod/" target = "_blank">
-		    	<i class="fa fa-instagram"></i>
-		    </a>
-		    <i class="fa fa-twitter">
-	  	 	</i>
-	  	 	</p>
-	  	 	
-		</div>
-	</footer>
-
-	<!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
+    <script src="assets/javascript/javascript.js " async defer></script>
 </body>
+
 </html>
