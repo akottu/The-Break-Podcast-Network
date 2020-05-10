@@ -23,23 +23,50 @@ posts = [
 
 ]
 
+# main routes
 @app.route('/') ## homepage - normally return html in function
-def index():
+def home():
 	return render_template('index.html')
 
 @app.route('/podcasts')
 def podcasts():
     return render_template('podcasts.html', posts=posts) ## passing in argument posts
 
-@app.route('/staff')
-def staff():
-	return 
-
 @app.route('/about') 
 def about():
-    return render_template('about.html', title='About')
+    return render_template('about.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+# podcast pages
+@app.route('/the_break')
+def the_break():
+    return render_template('the_break.html')
+
+# about routes
+@app.route('/producers')
+def producers():
+    return render_template('producers.html')
+
+@app.route('/hosts')
+def hosts():
+    return render_template('hosts.html')
+
+@app.route('/editors')
+def editors():
+    return render_template('editors.html')
+
+@app.route('/marketers')
+def marketers():
+    return render_template('marketers.html')
+
+@app.route('/developers')
+def developers():
+    return render_template('developers.html')
 
 ## if we run this flask blog with python then it will be in debug mode
 ## if we import it it won't run in debug mode
 if __name__ == '__main__': 
-	app.run(debug=True)  
+	app.run(host='0.0.0.0', port=5000)
