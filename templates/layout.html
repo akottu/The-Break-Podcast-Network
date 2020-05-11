@@ -27,16 +27,21 @@
             <a href="{{url_for('contact')}}"><button id="contact-header-button" class="solo-header-button">Contact</button></a>
         </div>
         <div class="dropdown">
-            <a href="{{url_for('about')}}"><button id="about-header-button" class="solo-header-button">About</button></a>
+            <a href="{{url_for('about')}}"><button id="about-header-button" class="dropbtn">About</button></a>
+            <div class="dropdown-content">
+                <a href="{{url_for('producers')}}">Producers</a>
+                <a href="{{url_for('hosts')}}">Hosts</a>
+                <a href="{{url_for('editors')}}">Editors</a>
+                <a href="{{url_for('marketers')}}">Marketers</a>
+                <a href="{{url_for('developers')}}">Developers</a>
+                <a class="dropdown-content-last" href="{{url_for('artists')}}">Artists</a>
+            </div>
         </div>
         <div class="dropdown">
             <a href="{{url_for('podcasts')}}"><button id="podcasts-header-button" class="dropbtn">Podcasts</button></a>
             <div class="dropdown-content">
                 <a class="dropdown-content-last" href="{{url_for('the_break')}}">The Break</a>
             </div>
-        </div>
-        <div class="dropdown">
-            <a href="{{url_for('home')}}"><button id="home-header-button" class="solo-header-button">Home</button></a>
         </div>
 
     </header>

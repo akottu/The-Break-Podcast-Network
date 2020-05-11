@@ -66,6 +66,10 @@ def marketers():
 def developers():
     return render_template('developers.html')
 
+@app.route('/artists')
+def artists():
+    return render_template('artists.html')
+
 ## if we run this flask blog with python then it will be in debug mode
 ## if we import it it won't run in debug mode
 if __name__ == '__main__': 
