@@ -135,6 +135,16 @@ footer{
 
 h2 {
     font-size: 48px;
+    text-align: right;
+}
+
+.about-sticky {
+    position: fixed;
+    width: 32%;
+}
+
+.card {
+    border-radius: 10px;
 }
 
 .profile-pic {
