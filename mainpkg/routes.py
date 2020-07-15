@@ -31,10 +31,8 @@ import os
 # ]
 
 # main routes
-@app.route('/') ## homepage - normally return html in function
-def home():
-	return render_template('index.html')
-
+@app.route('/')
+@app.route('/home') ## homepage - normally return html in function
 @app.route('/podcasts')
 def podcasts():
     podcasts = Podcast.query.all() ## grab all podcasts and episodes from database. should only grab podcasts using DISTINCT
@@ -105,7 +103,13 @@ def new_post():
 		return redirect(url_for('podcasts'))  ## maybe error here -redirect to index
 	return render_template('add_podcast.html', title = 'New Podcast', form = form)
 
+@app.route("/podcasts/<int:podcast_id>") ## accessed when podcast is explored
+def explore(podcast_id):
+	podcast = Podcast.query.get_or_404(podcast_id)
+	return render_template('podcast_page.html', title=podcast.name, podcast = podcast)
+
 ## if we run this flask blog with python then it will be in debug mode
 ## if we import it it won't run in debug mode
 if __name__ == '__main__': 
 	app.run(debug=True)  
+

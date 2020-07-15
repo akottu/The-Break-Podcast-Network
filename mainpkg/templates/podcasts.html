@@ -7,22 +7,22 @@
 		<div class="container">
 			<div class="row">
 		    
-	{% for episode in episodes %}
+	{% for podcast in podcasts %}
 
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-              <img src= "{{ url_for('static', filename  =  'images/podcast_pics/' + episode.image_file) }}" align= "middle" width="320" height="210" style="margin:8px 10px" />
+              <img src= "{{ url_for('static', filename  =  'images/podcast_pics/' + podcast.image_file) }}" align= "middle" width="320" height="210" style="margin:8px 10px" />
                
             </svg>
             <div class="card-body">
               <p class="card-text">
-              	<h3> {{episode.podcast}} </h3>
+              	<h3> {{podcast.name}} </h3>
               </p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Explore</button>
+                  <a href="{{ url_for( 'explore', podcast_id = podcast.id) }}"><button type="button" class="btn btn-sm btn-outline-secondary">Explore</button></a>
                 </div>
-                <small class="text-muted">Last Episode {{episode.date_posted.strftime('%Y-%m-%d')}}</small>
+                <small class="text-muted">Date Added {{podcast.date_posted.strftime('%Y-%m-%d')}}</small>
              </div>
              </div>
            </div>

@@ -9,6 +9,9 @@ class Episode(db.Model):
 	description = db.Column(db.Text, nullable = False) 
 	image_file = db.Column(db.String(20), nullable = False, default = 'default.jpg')
 
+	def __repr__(self): ## how our object is printed when we print it out
+		return f"Post('{self.title}','{self.date_posted}')" ## if we want content can get
+
 class Podcast(db.Model):
 	id = db.Column(db.Integer, primary_key = True)
 	name = db.Column(db.String(100), nullable = False) ## will be used to query individual episodes w/ name == podcast
@@ -19,7 +22,7 @@ class Podcast(db.Model):
 	def __repr__(self): ## how our object is printed when we print it out
 		return f"Post('{self.title}','{self.date_posted}')" ## if we want content can get
 
-
-## db.drop_all()
+## must manually add models to db file in terminal
 ## from mainpkg import db
+## db.drop_all()
 ## db.create_all()
