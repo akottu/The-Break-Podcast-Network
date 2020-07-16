@@ -7,7 +7,7 @@ from mainpkg.models import Episode
 class AddEpisode(FlaskForm):
 	podcast = StringField('Podcast',
 		validators = [DataRequired()])
-	episode = StringField('Episode',
+	name = StringField('Episode',
 		validators = [DataRequired()])
 	description =  TextAreaField('Description', 
 		validators=[DataRequired()])
