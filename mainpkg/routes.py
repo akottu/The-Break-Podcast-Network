@@ -76,11 +76,22 @@ def developers():
 def artists():
     return render_template('artists.html')
 
-def save_picture(form_picture):
+def save_podcast_picture(form_picture): ## in future restructure these functions
 	random_hex = secrets.token_hex(8)
 	_, f_ext = os.path.splitext(form_picture.filename)
 	picture_fn = random_hex + f_ext
 	picture_path = os.path.join(app.root_path, 'static/images/podcast_pics', picture_fn)## creating path to profile picture using pathing
+	output_size = (125, 125)
+	i = Image.open(form_picture)
+	i.thumbnail(output_size)
+	i.save(picture_path)
+	return picture_fn
+
+def save_episode_picture(form_picture):
+	random_hex = secrets.token_hex(8)
+	_, f_ext = os.path.splitext(form_picture.filename)
+	picture_fn = random_hex + f_ext
+	picture_path = os.path.join(app.root_path, 'static/images/episode_pics', picture_fn)## creating path to profile picture using pathing
 	output_size = (125, 125)
 	i = Image.open(form_picture)
 	i.thumbnail(output_size)
@@ -92,11 +103,10 @@ def new_post():
 	form = AddPodcast()
 	if form.validate_on_submit():
 		if form.picture.data:
-			picture_file = save_picture(form.picture.data)
+			picture_file = save_podcast_picture(form.picture.data)
 		podcast = Podcast(name = form.name.data,
 		 description = form.description.data, image_file = picture_file) ## call to Episode relation
-		
-		## figure out way to add image to db
+
 		db.session.add(podcast)
 		db.session.commit()
 		flash('Your podcast has been added', 'success')
@@ -108,9 +118,17 @@ def new_episode():
 	form = AddEpisode()
 	if form.validate_on_submit():
 		if form.picture.data:
-			picture_file = save_picture(form.picture.data)
+			picture_file = save_episode_picture(form.picture.data)
 		episode = Episode(name = form.name.data, podcast = form.podcast.data,
 		 description = form.description.data, image_file = picture_file) ## call to Episode relation
+
+		if form.password.data != 'TheBreak2020Pass':
+			flash('Incorrect Password', 'danger')
+			return redirect(url_for('podcasts'))
+
+			## if password != form.password.data return redirect(urlfor(homepage))
+		
+		## figure out way to add image to db
 		
 		## figure out way to add image to db
 		db.session.add(episode)

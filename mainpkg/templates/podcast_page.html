@@ -18,7 +18,7 @@
 {% for episode in episodes %}
 
     <div class="media text-muted pt-3">
-      <img src= "{{ url_for('static', filename  =  'images/podcast_pics/' + podcast.image_file) }}" align= "middle" width="32" height="32" style="margin:8px 10px" />
+      <img src= "{{ url_for('static', filename  =  'images/episode_pics/' + episode.image_file) }}" align= "middle" width="32" height="32" style="margin:8px 10px" />
       <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
         <strong class="d-block text-gray-dark">@{{episode.name}}</strong>
          {{ episode.description }}

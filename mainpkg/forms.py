@@ -14,6 +14,8 @@ class AddEpisode(FlaskForm):
 	picture = FileField('Podcast Logo',
 		validators=[FileAllowed(['jpg','png'], 'Image only!'), FileRequired('File was empty!')])
 	submit = SubmitField('Post')
+	password = StringField('Password',
+		validators = [DataRequired()])
 
 class AddPodcast(FlaskForm):
 	name = StringField('Podcast Name',
