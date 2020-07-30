@@ -76,7 +76,7 @@ def developers():
 def artists():
     return render_template('artists.html')
 
-def save_podcast_picture(form_picture): ## in future restructure these functions
+def save_podcast_picture(form_picture):
 	random_hex = secrets.token_hex(8)
 	_, f_ext = os.path.splitext(form_picture.filename)
 	picture_fn = random_hex + f_ext
@@ -107,6 +107,10 @@ def new_post():
 		podcast = Podcast(name = form.name.data,
 		 description = form.description.data, image_file = picture_file) ## call to Episode relation
 
+		if form.password.data != 'TheBreak2020Pass':
+			flash('Incorrect Password', 'danger')
+			return redirect(url_for('podcasts'))
+
 		db.session.add(podcast)
 		db.session.commit()
 		flash('Your podcast has been added', 'success')
@@ -120,7 +124,8 @@ def new_episode():
 		if form.picture.data:
 			picture_file = save_episode_picture(form.picture.data)
 		episode = Episode(name = form.name.data, podcast = form.podcast.data,
-		 description = form.description.data, image_file = picture_file) ## call to Episode relation
+		 description = form.description.data, image_file = picture_file, apple = form.apple.data,
+		 spotify = form.spotify.data) ## call to Episode relation
 
 		if form.password.data != 'TheBreak2020Pass':
 			flash('Incorrect Password', 'danger')
@@ -140,7 +145,7 @@ def new_episode():
 @app.route("/podcasts/<int:podcast_id>") ## accessed when podcast is explored
 def explore(podcast_id):
 	podcast = Podcast.query.get_or_404(podcast_id)
-	episodes = Episode.query.all()
+	episodes = Episode.query.filter_by(podcast = podcast.name) ## using podcast name to query correct episodes
 	return render_template('podcast_page.html', title=podcast.name, podcast = podcast, episodes = episodes)
 
 ## if we run this flask blog with python then it will be in debug mode

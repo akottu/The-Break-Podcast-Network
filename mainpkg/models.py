@@ -8,6 +8,8 @@ class Episode(db.Model):
 	date_posted = db.Column(db.DateTime, nullable = False, default = datetime.utcnow) 
 	description = db.Column(db.Text, nullable = False) 
 	image_file = db.Column(db.String(20), nullable = False, default = 'default.jpg')
+	apple = db.Column(db.String(100), nullable = False)
+	spotify = db.Column(db.String(100), nullable = False)
 
 	def __repr__(self): ## how our object is printed when we print it out
 		return f"Post('{self.title}','{self.date_posted}')" ## if we want content can get

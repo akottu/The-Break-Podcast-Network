@@ -56,7 +56,33 @@
                     {% endif %}
                 </div>
 
-                <div class = "form-group"> {{form.password.label(class = "form-control-label")}}
+				<div class = "form-group"> {{form.apple.label(class = "form-control-label")}}
+				{% if form.apple.errors %}
+					{{form.apple(class = "form-control form-control-lg is-invalid")}}
+					<div class = "invalid-feedback">
+						{% for error in form.apple.errors %}
+							<span> {{ error }} </span>
+						{% endfor %}
+					</div>
+				{% else %}
+				{{form.apple(class = "form-control form-control-lg")}}
+				{% endif %}
+				</div>
+
+				<div class = "form-group"> {{form.spotify.label(class = "form-control-label")}}
+				{% if form.spotify.errors %}
+					{{form.spotify(class = "form-control form-control-lg is-invalid")}}
+					<div class = "invalid-feedback">
+						{% for error in form.spotify.errors %}
+							<span> {{ error }} </span>
+						{% endfor %}
+					</div>
+				{% else %}
+				{{form.spotify(class = "form-control form-control-lg")}}
+				{% endif %}
+				</div>
+
+				<div class = "form-group"> {{form.password.label(class = "form-control-label")}}
 				{% if form.password.errors %}
 					{{form.password(class = "form-control form-control-lg is-invalid")}}
 					<div class = "invalid-feedback">
